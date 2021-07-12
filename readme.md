@@ -1,5 +1,5 @@
 # description
-Scripts qui génère un rapport latex automatiquement. 
+Scripts qui génère un rapport latex automatiquement. allo
 
 
 # requis PC pour fonctionner
@@ -21,7 +21,7 @@ Pour votre compte Overleaf:
  - Si vous avez une authentification overleaf externe, faîte reset votre password overleaf pis setter en un
  - récupération du rapport:
     - info: git clone https://git.overleaf.com/60dbafb3c22aac53e265b6e6
-    - elec: git clone https://git.overleaf.com/60dbafb3c22aac53e265b6e6
+    - elec: git clone https://git.overleaf.com/60eca6b79007bd289a5c2f87
     - mec: git clone https://git.overleaf.com/60eca6af9007bd1dcc5c2f00
  - Git va vous demander le mot de passe et nom du compte.
  - si c'est pas clair, [doc officiel](https://www.overleaf.com/learn/how-to/How_do_I_connect_an_Overleaf_project_with_a_repo_on_GitHub,_GitLab_or_BitBucket%3F)
