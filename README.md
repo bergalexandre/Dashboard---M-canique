@@ -1,5 +1,5 @@
 # description
-Script qui génère un rapport latex automatiquement. 
+Script qui génère un rapport latex automatiquement. allo
 
 
 # requis PC pour fonctionner
