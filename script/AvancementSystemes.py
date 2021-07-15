@@ -102,6 +102,6 @@ class AvancementSystemes():
         bottom = 5 * height / 8       
 
         img = img.crop([left, top, right, bottom])
-        img.show()
+        #img.show()
         img.save('img/avancement.png')
            
