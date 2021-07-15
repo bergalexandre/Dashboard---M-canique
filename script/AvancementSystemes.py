@@ -3,6 +3,7 @@ import numpy as np
 from copy import copy
 from datetime import date
 from script.utils import *
+from PIL import Image
 
 
 
@@ -79,16 +80,28 @@ class AvancementSystemes():
 
                 #  Matplotlib
                 wedges, texts = axs[index].pie(new_data.values(), wedgeprops=dict(
-                    width=0.5), startangle=-90, colors=colors, radius=1.1)
+                    width=0.3), startangle=-90, colors=colors, radius=1.1)
 
                 bbox_props = dict(boxstyle="round,pad=0.3", fc="w", ec="k", lw=0.72)
                 kw = dict(arrowprops=dict(arrowstyle="-"),
                         bbox=bbox_props, zorder=0, va="center")
 
-                axs[index].annotate(str(data[s]['Avancement réel'] * 100) +
+                axs[index].annotate(str(round(data[s]['Avancement réel'] * 100, 1)) +
                             "%", xy=(0, 0), ha='center', va='center')
                 axs[index].set_title(s, y=1.1)
                 index = index + 1
         
         plt.savefig('img/avancement.png')
+        
+        img = Image.open(r"img/avancement.png")
+        width, height = img.size
+
+        left = 1
+        top = height / 4
+        right = width
+        bottom = 5 * height / 8       
+
+        img = img.crop([left, top, right, bottom])
+        img.show()
+        img.save('img/avancement.png')
            
