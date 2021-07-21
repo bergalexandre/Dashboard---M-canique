@@ -103,5 +103,3 @@ class CourbeEnS():
         axe.set_xticklabels(axeXDate.strftime("%Y-%m-%d"))
         axe.legend(("heures totales", "Heures travaillées", "Heures acquises", "heures restantes"))
         plt.savefig('img/courbe_S.png', bbox_inches='tight')
-
-CourbeEnS("../DVP-Feuille-temps.xlsm")
