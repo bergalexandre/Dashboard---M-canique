@@ -10,6 +10,7 @@
 \usepackage{svg}
 \usepackage{xcolor}
 \usepackage{tabularx}
+\usepackage{enumitem}
 
 
 % Set main font (Abraham)
@@ -71,15 +72,13 @@ linewidth=1pt % Width of the border lines around content boxes
 %
 {\textsf{{Tableau de bord - Éco-Marathon Shell 2023}}} % Titre en Sans Serif
 {\sf\vspace{0.1em}\\
-Mécanique  -  {\AdvanceDate[0]\today} 
+Électrique  -  {\AdvanceDate[0]\today} 
 \vspace{0.1em}\\
 \small{ Période couverte du {\AdvanceDate[-7]\today} au {\AdvanceDate[0]\today}
 }
 }
 {\includegraphics[width=.1\linewidth]{img/udes.png}} % TU Dublin logo
 
-
-% this states the box starts at column 0 (edge of page), row 0 (top of page) for a span of 3 (columns wide)
 \headerbox{Objectif de projet}{name=objectif,column=0,row=0, span=3}{
 Créer un véhicule efficace à propulsion électrique pour participer et gagner la compétition Shell-éco marathon dans la division ''véhicule urbain'' en 2023
 
@@ -88,40 +87,35 @@ Créer un véhicule efficace à propulsion électrique pour participer et gagner
 \bf
 QUOTE de la semaine : Se réunir est un début, rester ensemble est un progrès, travailler ensemble est : LA RÉUSSITE. Henry Ford
 \end{flushleft}
-\vspace{2cm} %remove this, only added for spacing
 
+\vspace{0.2cm} %vertical spacing
 }
 
-% this states the box starts at column 0 (edge of page), directly below the box labelled introduction for a span of 1 (column wide)
+
 \headerbox{Objectifs de session}{name=objectif_session,column=1,below=objectif,span=2}{
 
 %\vspace{0.15cm}
 \centering
 {\input{tableaux/objectifs_session}}
 
-%\vspace{0.2cm} % spacing vertical
+\vspace{0.4cm} % spacing vertical
 
 }
 
-% this states the box starts at column 0 (edge of page), directly below the box labelled subtopic1 for a span of 1 (column wide)
 \headerbox{Ordre du jour}{name=ordre_jour,column=0,below=objectif,span=1}{
-
+\vspace{0.1cm}
 \begin{itemize}
     \item \textbf{Rencontre gestion :}
     \begin{enumerate}
-        \item Template pour audit d'équipe
-        \item Site web en cours
-        \item Suivi du budget pour RCP1
-        \item Audit d'équipe
-    \end{enumerate}
-    \item \textbf{Rencontre technique :}
-    \begin{enumerate}
-        \item Design Review 1
-        
+        \item Premier truc à parler gestion
+        \item Deuxième truc à parler gestion
+        \item Troisième truc à parler gestion
+        \item Quatrième truc à parler gestion
+        \item Cinquième truc à parler gestion
     \end{enumerate}
 \end{itemize}
 
-\vspace{0.05cm} % spacing vertical
+\vspace{.84cm} % spacing vertical
 }
 
 \headerbox{Membres}{name=membres,column=2,below=objectif_session,span=1}{
@@ -229,27 +223,6 @@ Freins
 
 
 \vspace{1cm}
-%\begin{wrapfigure}[8]{r}{0.25\textwidth}
-%\includegraphics[width=.9\linewidth]{DevOps.png} 
-%\includegraphics[width=.9\linewidth]{DevOps.png} 
-%\end{wrapfigure}
-%
-%\vspace{0.3cm}
-%\subsubsection*{2. Another sub section:}
-%
-%Subsection description
-%
-%\vspace{2.3cm} %remove this, only added for spacing
-%
-%\begin{wrapfigure}[5]{r}{0.25\textwidth}
-%\includegraphics[width=.9\linewidth]{TUDublin.jpg} 
-%\end{wrapfigure}
-%
-%\vspace{0.35cm}
-%\subsubsection*{3. Another sub section:}
-%Final Subsection description
-%
-%\vspace{2cm} %remove this, only added for spacing
 }
 
 
@@ -302,102 +275,27 @@ linewidth=1pt % Width of the border lines around content boxes
 }
 {}
 {\textsf{{}}} % Titre vide pcq sinon ça plante
+\hfill \break % Ligne vide pcq sinon ça plante
+
+\headerbox{Objectifs deux semaines}{name=objectifs,column=0, row=0, span=3}{{\input{tableaux/taches_accomplies}}}
 
 
-% this states the box starts at column 0 (edge of page), row 0 (top of page) for a span of 3 (columns wide)
-\headerbox{Tâches accomplies}{name=taches,column=0,row=0, span=3}{
-{\input{tableaux/taches_accomplies}}
-
-%\vspace{2cm} %remove this, only added for spacing
-
+\headerbox{Problèmes}{name=problemes,column=0,span=3,below=objectifs}{
+\input{tableaux/problemes}
 }
 
-% this states the box starts at column 0 (edge of page), directly below the box labelled subtopic1 for a span of 1 (column wide)
-
-\headerbox{Problèmes}{name=problemes,column=0,below=taches,span=3}{
-
-{\input{tableaux/problemes}}
-
-%\vspace{.65cm}
-%\begin{itemize}
-%    \item \textbf{Faire un schéma de dataflow du simulateur:} Mauvais compréhension du flow de données du %simulateur dans l'équipe informatique				
-%    \item \textbf{Peux pas entrer les heures dans le DVP:} Courbe en S est pas représentative.	
-%    \end{itemize}%
-
-%    \vspace{1.8cm} % spacing vertical
-
+\headerbox{Risques}{name=risques,column=0,span=3,below=problemes}{
+\input{tableaux/risques}
 }
 
-% this states the box starts at column 0 (edge of page), directly below the box labelled introduction for a span of 1 (column wide)
-\headerbox{Avancement systèmes}{name=systemes,column=0,below=problemes,span=3}{
-
-%\vspace{0.15cm}
-\centering
-{\includegraphics[width=1\linewidth]{img/avancement.png}}
-
-%\vspace{0.2cm} % spacing vertical
-
-}
-
-
-
-\headerbox{Risques}{name=risques,column=0,span=3,below=systemes}{
-{
-    {\input{tableaux/risques}}
-}
-
-}
-
-\headerbox{Objectifs semaine prochaine}{name=objectifs_prochain,column=2,span=1,below=risques}{
-{
-    \vspace{.65cm}
-    \begin{itemize}
-    \item \textbf{Simulateur :}
-    \begin{enumerate}
-        \item Faire un guide pour l'équipe info
-        \item Valider le modèle
-    \end{enumerate}
-    \item \textbf{Coque :}
-    \begin{enumerate}
-        \item Réaliser 2 modèles, par des individues différents, et comparer les résultats
-        \item Étude de convergence sur les modèles STAR CCM +
-    \end{enumerate}
-    \item \textbf{Direction/Suspension/freins :}
-    \begin{enumerate}
-        \item Finaliser pour audits et NOTER les éléments qui sortent du design review		
-    \end{enumerate}
-    \item \textbf{Gestion et Documentation :}
-    \begin{enumerate}
-        \item Mise en place d'un outil pour le budget
-        \item Séparer les parties du RCP1
-        \item Faire un plan du RCP1 pour présenter à David jeudi prochain
-        \item AUDIT D'ÉQUIPE	
-    \end{enumerate}
-    %\item \textbf{Freins :}
-    \end{itemize}
-    
-    \vspace{1cm} % spacing vertical
-}
-
-}
-
-\headerbox{Cashflow}{name=cashflow,column=0,span=2,below=risques}{
-{
-
-    \vspace{.6cm} % spacing vertical
-    {
-        \hspace{1cm}
-        \centering
-    	\includegraphics[scale=.5]{img/cashflow.png}
-    }
-    %\vspace{1.15cm} % spacing vertical
-}
-
+\headerbox{Cashflow}{name=cashflow,column=0,span=3,below=risques}{
+\vspace{.6cm} % spacing vertical
+\hspace{1cm}
+\begin{center}
+    \includegraphics[scale=.40]{img/cashflow.png}
+\end{center}
 }
 
 \end{poster}
-
-
-
 
 \end{document}
