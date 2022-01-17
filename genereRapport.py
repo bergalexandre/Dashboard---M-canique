@@ -18,7 +18,7 @@ def run(*args):
     return subprocess.check_call(['git'] + list(args))
 
 
-def dateActuel(Depart = "5/6/2021"):
+def dateActuel(Depart = "6/1/2022"):
     semaines = pandas.date_range(start=Depart, periods=16, freq="7D") #trimeste = 16 semaines????
     #trouve la semaine courante
     semaineN = 0
@@ -59,7 +59,7 @@ spec = Speciality.MECA
 #avancement_objectifs = AvancementObjectifs("../DVP-Feuille-temps.xlsm")
 #avancement_objectifs.graphSave()
 
-heures_travaillees = HeuresTravaillees(spec, offset=8)
+heures_travaillees = HeuresTravaillees(spec)
 heures_travaillees.fetchData()
 heures_travaillees.graphSave()
 
@@ -69,9 +69,9 @@ CourbeEnS("../DVP-Feuille-temps.xlsm")
 taches_effectuees.fetchData()
 taches_effectuees.writeTable() """
 
-avancement_systemes = AvancementSystemes(spec)
-avancement_systemes.fetchData()
-avancement_systemes.graphSave()
+#avancement_systemes = AvancementSystemes(spec)
+#avancement_systemes.fetchData()
+#avancement_systemes.graphSave()
 
 """ problemes = Problemes(spec)
 problemes.fetchData()
