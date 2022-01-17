@@ -72,7 +72,7 @@ linewidth=1pt % Width of the border lines around content boxes
 %
 {\textsf{{Tableau de bord - Éco-Marathon Shell 2023}}} % Titre en Sans Serif
 {\sf\vspace{0.1em}\\
-Électrique  -  {\AdvanceDate[0]\today} 
+Mécanique  -  {\AdvanceDate[0]\today} 
 \vspace{0.1em}\\
 \small{ Période couverte du {\AdvanceDate[-7]\today} au {\AdvanceDate[0]\today}
 }
@@ -101,11 +101,8 @@ Créer un véhicule efficace à propulsion électrique pour participer et gagner
 \begin{itemize}
     \item \textbf{Rencontre gestion :}
     \begin{enumerate}
-        \item Premier truc à parler gestion
-        \item Deuxième truc à parler gestion
-        \item Troisième truc à parler gestion
-        \item Quatrième truc à parler gestion
-        \item Cinquième truc à parler gestion
+        \item Rencontre Bespline 
+        \item Ressources nécessaires pour faire les systèmes
     \end{enumerate}
 \end{itemize}
 
@@ -190,9 +187,9 @@ Responsable CFD
 \vspace{2mm}
 \textbf{Gabriel Ouellet}
 
-Moteur
+Direction
 
-Transmission
+Ergonomie
 
 \begin{wrapfigure}[5]{r}{0.25\textwidth}
 \includegraphics[width=.9\linewidth]{img/membres/Alexandre-Dumont-3.jpg} 
@@ -220,7 +217,7 @@ Freins
 }
 
 
-\headerbox{Courbe en S}{name=courbe_s,column=0,span=2,below=ordre_jour}{
+\headerbox{Courbe en S}{name=courbe_s,column=0,span=2,below=objectif_session}{
 {
     {
         \hspace{1cm}
@@ -271,7 +268,7 @@ linewidth=1pt % Width of the border lines around content boxes
 {\textsf{{}}} % Titre vide pcq sinon ça plante
 \hfill \break % Ligne vide pcq sinon ça plante
 
-\headerbox{Objectifs deux semaines}{name=objectifs,column=0, row=0, span=3}{{\input{tableaux/taches_accomplies}}}
+\headerbox{Objectifs bimensuels}{name=objectifs,column=0, row=0, span=3}{{\input{tableaux/taches_accomplies}}}
 
 
 \headerbox{Problèmes}{name=problemes,column=0,span=3,below=objectifs}{
@@ -288,6 +285,11 @@ linewidth=1pt % Width of the border lines around content boxes
 \begin{center}
     \includegraphics[scale=.40]{img/cashflow.png}
 \end{center}
+}
+\headerbox{Citation de la semaine}{name=citation,column=0,row=0, span=3,below=cashflow}{
+ \textit{"Un joueur qui rend une équipe bonne est plus précieux qu'un bon joueur."}
+
+\vspace{0.2cm} %vertical spacing
 }
 
 \end{poster}
