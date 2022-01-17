@@ -96,8 +96,8 @@ class CourbeEnS():
 
         #jusqu'à la semaine 8, worked hours = realprogress = budgeted hour
 
-        ax.plot(range(week+1), workedHours[:week+1], "r--")
-        ax.plot(range(week+1), realProgressHours[:week+1], "g")
+        ax.plot(range(week), workedHours[:week], "r--")
+        ax.plot(range(week), realProgressHours[:week], "g")
 
         #deltaAvancement = BudgetedHours[index] - workedHours[index]
         #ax.plot(range(index, len(BudgetedHours)), list((heureTotal-deltaAvancement) for heureTotal in BudgetedHours[index:]), "r--")

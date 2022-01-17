@@ -18,7 +18,7 @@ def run(*args):
     return subprocess.check_call(['git'] + list(args))
 
 
-def dateActuel(Depart = "6/1/2022"):
+def dateActuel(Depart = "10/1/2022"):
     semaines = pandas.date_range(start=Depart, periods=16, freq="7D") #trimeste = 16 semaines????
     #trouve la semaine courante
     semaineN = 0
