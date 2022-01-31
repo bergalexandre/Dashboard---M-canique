@@ -1,14 +1,18 @@
-\textbf{\large Ch\^assis}\\
+\textbf{\large Ch\^assis}\\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
        % sum=0.2\hsize for 4 columns
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-       Conception détaillé du ch\^assis (dossier, poutres et plancher). & A.M., D.B., M.R.\\\hline 
-       Études FEA pour les cas de chargements. & Donald\\\hline
-       Intégration des sous-systèmes (suspension, direction, ). & A.M., M.R. \\\hline 
+    \textbf{Objectif} & \textbf{Responsable} & \textbf{\% attendu} & \textbf{\% fait}
+    \\\hline
+        Intégration des sous-systèmes (suspension, direction, transmission, moteur). & A.M., D.B., M.R. & & \\\hline 
+       Déterminer les matériaux et services nécessaires pour commandite Gurit et approximer la masse. & A.M., D.B., M.R.& &\\\hline 
+       Études FEA pour les cas de chargements. & Donald & & \\\hline
+       
 \end{tabularx}
 
 
@@ -16,14 +20,16 @@
 \hfill \break
 \textbf{\large Coque}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-       Terminer le modèle CFD et le représenter à l'expert & Joé (7/10), Charles, J-S \\\hline
-       CAD complets des concepts finaux de la coque (premier jet) & J-S, Donald \\\hline
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
+       Terminer le modèle CFD et le représenter à l'expert & Joé, Charles, J-S & 100\% & 90\%\\\hline
+       CAD complets des concepts finaux de la coque (premier jet) & J-S, Donald & & \\\hline
+       Terminer simulations sur devant de véhicules + plaque vs garde boue sur roues& Joé, Chalres, J-S & 50\% & 40\%\\\hline
        & \\\hline 
 \end{tabularx}
 
@@ -32,15 +38,14 @@
 \hfill \break
 \textbf{\large Simulateur}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+     |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-       Modélisation des pneus, bearings, freins et de la résistance en virage (FAIT).&Alex \\\hline 
-       Nettoyage du script Matlab et Simulink (FAIT).&Alex \\\hline
-       Mettre à jour le guide d'équations mécaniques (FAIT).&Alex \\\hline 
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
+       Courbes de l'effet de la résistance au roulement et du coefficient aéro.& Alex & & \\\hline 
 \end{tabularx}
 
 
@@ -48,16 +53,18 @@
 \hfill \break
 \textbf{\large Suspension}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-       Réunion avec les systèmes châssis et freins pour discuter de l'intégration avant de revoir le design conceptuel(FAIT).&Alex \\\hline 
-       Design conceptuel des nouvelles attaches avant (7/10).&Alex \\\hline
-       Calcul des load cases avants (7/10 - dynamique, 2/10 bosses).&Alex, Joé \\\hline  
-       Conception initiale des roues. & Jérémi\\\hline
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
+       Terminer les cas de chargement en utilisation normale et en fatigue.&Alex  & & \\\hline 
+       DCL et calculs analytiques des pièces de suspension (Matlab).&Alex \\\hline
+       Choix des roulements avec SKF &Alex  & & \\\hline  
+       Début des FEA de la suspension &Alex, Jérémi & 0 & 0 \\\hline  
+       Conception initiale des roues. & Jérémi & 30\% & 30\% \\\hline
        & \\\hline 
 \end{tabularx}
 
@@ -66,14 +73,13 @@
 \hfill \break
 \textbf{\large Freins}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-     Conception du frein de stationnement. (FAIT) & Jérémi\\\hline 
-       & \\\hline
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
        & \\\hline 
 \end{tabularx}
 
@@ -81,31 +87,34 @@
 \hfill \break
 \textbf{\large Ergonomie}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-       Terminer la conception et démarrer l'impression du support des batteries & Charles\\\hline 
-       & \\\hline
-       & \\\hline 
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
+       Terminer la conception et démarrer l'impression du support des batteries & Charles  & &\\\hline 
+       Commencer la conception de certains composants et supports (phase 1 de 3) & Gab, Joé &30 \% &10\% \\\hline
+
 \end{tabularx}
 
 \hfill \break
 \textbf{\large Direction}\\
 \begin{tabularx}{\linewidth}{
-    |>{\hsize=1.75\hsize}X|% 10% of 4\hsize 
-    >{\hsize=0.25\hsize}X|% 30% of 4\hsize
-       % sum=0.2\hsize for 4 columns
+    |>{\hsize=2.5\hsize}X|% 10% of 4\hsize 
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
+    >{\hsize=0.5\hsize}X|% 30% of 4\hsize
   }
     \hline
-    \textbf{Objectif} & \textbf{Responsable} \\\hline
-        Faire fiter le système direction avec les autres systèmes et s'assurer d'avoir un bon ackermann 5/10 .&Gabriel
+    \textbf{Objectif} & \textbf{Responsable}  & \textbf{\% attendu} & \textbf{\% fait} \\\hline
+        Faire fiter le système direction avec les autres systèmes et s'assurer d'avoir un bon ackermann.&Gabriel  & 50\% & 50\%
         \\\hline 
-        Faire un assemblage pour voir les interférences et l'angle des roues 5/10 .&Gabriel
+        DCL et calculs analytiques des pièces de la direction &Gabriel  & 0\% & 20\%
         \\\hline
-       & \\\hline 
+        Début des FEA suspension  &Gabriel  & 0\% & 0\%
+        \\\hline
 \end{tabularx}
 
 
