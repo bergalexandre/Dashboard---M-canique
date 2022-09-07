@@ -11,14 +11,14 @@ from script.Problemes           import Problemes
 from script.TravailEffectue     import TravailEffectue
 from PIL import Image
 
-git_integration = False
+git_integration = True
 
 
 def run(*args):
     return subprocess.check_call(['git'] + list(args))
 
 
-def dateActuel(Depart = "25/8/2022"):
+def dateActuel(Depart = "1/9/2022"):
     semaines = pandas.date_range(start=Depart, periods=16, freq="7D") #trimeste = 16 semaines????
     #trouve la semaine courante
     semaineN = 0
