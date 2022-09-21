@@ -1,10 +1,8 @@
+import random
 from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
-from script.utils import *
-
-
-
+from script.utils import PATHS, DATA
 
 
 class HeuresTravaillees():
@@ -20,46 +18,49 @@ class HeuresTravaillees():
 
     def fetchData(self):
         # fetching data
-        semaine_courante = df_formule['Date Actuel'][1]
-        data = df_travail_effectue[['#Requis', 'NOM', 'Semaine', 'heures']]
+        semaine_courante = DATA.FORMULA['Date Actuel'][1]
+        data = DATA.CRTE[['#Requis', 'NOM', 'Semaine', 'heures']]
 
         # Heures totales et heures systemes
         for i, objectif in data.iterrows():
+            print(objectif['NOM'])
             if objectif['NOM'] in self.heures_travaillees.keys():
                 requis = objectif['#Requis']
                 if semaine_courante == objectif['Semaine']:
                     self.heures_travaillees[objectif['NOM']][requis[0:4]
                                                              ] = self.heures_travaillees[objectif['NOM']][requis[0:4]] + objectif['heures']
                 self.heures_travaillees[objectif['NOM']]['heures totales'] = self.heures_travaillees[objectif['NOM']
-                                                                                                     ]['heures totales'] + df_travail_effectue['heures'][i]
+                                                                                                     ]['heures totales'] + DATA.CRTE['heures'][i]
 
         # Calcul de la moyenne des heures
         x = int(semaine_courante.split()[1])
         for membre in self.heures_travaillees:
-            self.heures_travaillees[membre]['moyenne hebdo'] = self.heures_travaillees[membre]['heures totales'] / (
-                x - self.offset)
+            self.heures_travaillees[membre]['moyenne hebdo'] = self.heures_travaillees[membre]['heures totales'] / (x - self.offset)
 
     def graphSave(self):
         fig, axes = plt.subplots()
-        colors = ['tab:blue', 'tab:red', 'tab:orange','chartreuse', 'gold', 'deeppink', 'tab:cyan', 
-                  'orangered', 'chartreuse']
+        colors = ['#23ccc1','#32cea9','#96c74c','#b8c02a','#dcb504','#ffa600', '#c20606', '#cd2e01', '#1f60c2', '#ff6c54' ]
+        random.shuffle(colors)
         
         labels = []
         for name in self.heures_travaillees.keys():
             labels.append(self.specialty['membres'][name]['initials'])
-        somme = 0
+        current_sum, somme = 0, 0
         legend = []
-
+        tmp = [0,0,0,0,0,0,0,0,0]   
         for i, systeme in enumerate(self.specialty['systemes']):
             heures_systeme = []
-            legend.append(systeme['name'])
             for nom in self.heures_travaillees:
                 if np.isnan(self.heures_travaillees[nom][systeme['number']]):
                     raise Exception(
                         f"{nom} n'a pas rentré ses heures pour une tâche du système {systeme['name']}")
                 heures_systeme.append(self.heures_travaillees[nom][systeme['number']])
                 somme = somme + self.heures_travaillees[nom][systeme['number']]
-            axes.bar(labels, heures_systeme, color=colors[i], )
+            if somme - current_sum > 0: 
+                legend.append(systeme['name'])
+                axes.bar(labels, heures_systeme, color=colors.pop(), bottom=tmp)
+                current_sum = somme
+                tmp = np.add(tmp, heures_systeme)
         axes.legend(legend)
 
         moyennes_hebdo = []
@@ -75,9 +76,5 @@ class HeuresTravaillees():
             axes.plot(indexMembre, moyennes_hebdo[indexMembre],
                       "ko" if moyennes_hebdo[indexMembre] >= 9 else "kx")
         plt.xlim([-1, len(self.heures_travaillees)])
-        plt.xticks(rotation=45)
-        plt.savefig("img/heures_travaillees.png", bbox_inches='tight')
-
-
-
-
+        plt.setp(axes.xaxis.get_majorticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+        plt.savefig(PATHS["HOURS"], bbox_inches='tight', dpi=96)

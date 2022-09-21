@@ -18,7 +18,7 @@ def run(*args):
     return subprocess.check_call(['git'] + list(args))
 
 
-def dateActuel(Depart = "6/5/2021"):
+def dateActuel(Depart = "1/9/2022"):
     semaines = pandas.date_range(start=Depart, periods=16, freq="7D") #trimeste = 16 semaines????
     #trouve la semaine courante
     semaineN = 0
@@ -56,42 +56,42 @@ def resizePicture(path, dimension):
 
 
 spec = Speciality.MECA
-avancement_objectifs = AvancementObjectifs("../DVP-Feuille-temps.xlsm")
-avancement_objectifs.graphSave()
+#avancement_objectifs = AvancementObjectifs("../DVP-Feuille-temps.xlsm")
+#avancement_objectifs.graphSave()
 
-heures_travaillees = HeuresTravaillees(spec, offset=8)
+heures_travaillees = HeuresTravaillees(spec)
 heures_travaillees.fetchData()
 heures_travaillees.graphSave()
 
 CourbeEnS("../DVP-Feuille-temps.xlsm")
 
-taches_effectuees = TravailEffectue(spec)
+""" taches_effectuees = TravailEffectue(spec)
 taches_effectuees.fetchData()
-taches_effectuees.writeTable()
+taches_effectuees.writeTable() """
 
-avancement_systemes = AvancementSystemes(spec)
-avancement_systemes.fetchData()
-avancement_systemes.graphSave()
+#avancement_systemes = AvancementSystemes(spec)
+#avancement_systemes.fetchData()
+#avancement_systemes.graphSave()
 
-problemes = Problemes(spec)
+""" problemes = Problemes(spec)
 problemes.fetchData()
-problemes.writeTable()
+problemes.writeTable() """
 
 
-resizePicture("img/progression_objectifs.png", (1336, 405))
-resizePicture("img/avancement.png", (1185, 483))
+#resizePicture("img/progression_objectifs.png", (1336, 405))
+#resizePicture("img/avancement.png", (1185, 483))
 resizePicture("img/Courbe_S.png", (604, 436))
 resizePicture("img/heures_travaillees.png", (511, 342)) 
 
 
 if git_integration == True:
     pull()
-    add("img/progression_objectifs.png")
+    #add("img/progression_objectifs.png")
     add("img/avancement.png")
     add("img/Courbe_S.png")
     add("img/heures_travaillees.png")
-    add("tableauDeTaches.tex")
-    add("tableauDeProblemes.tex") #frog(?) #WhatTheBread
+    #add("tableauDeTaches.tex")
+    #add("tableauDeProblemes.tex") #frog(?) #WhatTheBread
     commitEtPush()
 
 #budget = Budget(spec)
